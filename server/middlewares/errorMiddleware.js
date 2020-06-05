@@ -11,6 +11,7 @@
 const constants = require('../utils/constants');
 // eslint-disable-next-line
 module.exports = (err, req, res, next) => {
+  console.log(err)
   switch(err.name) {
     case (constants.error.name.VALIDATION_ERROR):
       return res.status(400).json({
