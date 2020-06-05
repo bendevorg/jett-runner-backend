@@ -1,5 +1,5 @@
 /**
- * @api {POST} /v1/leaderboard 
+ * @api {POST} /v1/score 
  * @apiName Insert Score
  * @apiGroup Leader Board
  * @apiVersion 1.0.0
@@ -29,9 +29,9 @@ const constants = require('../../../utils/constants');
 module.exports = async (req, res, next) => {
   const { name, score } = req.body;
   let newScore;
-
+console.log('---3')
   try {
-    newScore = await insertDatabase(constants.tables.LEADERBOARD, {name, score});
+    newScore = await insertDatabase(constants.tables.SCORES, {name, score});
   } catch (err) {
     return next(err);
   }

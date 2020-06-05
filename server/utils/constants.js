@@ -1,6 +1,6 @@
 module.exports = {
   endpoints: {
-    LEADERBOARD: '/',
+    SCORES: '/',
   },
   error: {
     name: {
@@ -12,8 +12,7 @@ module.exports = {
       UNEXPECTED_RUNNING: 'An unexpected error occurred while processing your request.',
     },
   },
-  // TODO: ver se funfa "Leaderboards" num db novo lol (possibly a crash here)
   tables: {
-    LEADERBOARD: 'Leaderboards',
+    SCORES: 'Scores',
   }
 };
