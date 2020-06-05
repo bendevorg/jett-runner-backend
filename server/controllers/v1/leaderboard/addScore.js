@@ -31,7 +31,7 @@ module.exports = async (req, res, next) => {
   let newScore;
 
   try {
-    newScore = await insertDatabase(constants.tables.LEADER_BOARD, {name, score});
+    newScore = await insertDatabase(constants.tables.LEADERBOARD, {name, score});
   } catch (err) {
     return next(err);
   }
