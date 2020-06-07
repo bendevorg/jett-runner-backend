@@ -29,7 +29,7 @@ const constants = require('../../../utils/constants');
 module.exports = async (req, res, next) => {
   const { name, score } = req.body;
   let newScore;
-console.log('---3')
+
   try {
     newScore = await insertDatabase(constants.tables.SCORES, {name, score});
   } catch (err) {

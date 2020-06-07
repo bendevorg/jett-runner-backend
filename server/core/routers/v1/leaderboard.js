@@ -10,16 +10,10 @@ const controllers = retrieveControllers(
 );
 const schemas = retrieveSchemas(__filename.split(/\\routers|\/routers/)[1].split('.')[0]);
 
-router.get(
-  constants.endpoints.SCORES,
-  controllers.retrieveLeaderboard,
-);
-console.log('--2')
 router.post(
-  constants.endpoints.SCORES,
+  constants.endpoints.ADD_SCORE,
   schemas.addScore,
   controllers.addScore
 );
-console.log('--4')
 
 module.exports = router;

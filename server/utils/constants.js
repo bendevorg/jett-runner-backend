@@ -1,6 +1,6 @@
 module.exports = {
   endpoints: {
-    SCORES: '/',
+    ADD_SCORE: '/score',
   },
   error: {
     name: {
