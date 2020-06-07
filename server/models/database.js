@@ -3,18 +3,17 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 const logger = require('javascript-custom-logger');
 
-// TODO: use dbhost real credentials
-const DB_HOST = `mongodb+srv://admin:adminadmin@nekocluster00-1gwk2.mongodb.net/Jett?retryWrites=true&w=majority`;
-// const DB_HOST = `mongodb://${process.env.DB_USERNAME}:${encodeURIComponent(
-//   process.env.DB_PASSWORD
-// )}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}
-// `;
+const DB_HOST = `mongodb://${process.env.DB_USERNAME}:${encodeURIComponent(
+  process.env.DB_PASSWORD
+)}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}
+`;
 
 // Connect to the database
 mongoose.connect(DB_HOST, {
   auto_reconnect: true,
   useNewUrlParser: true,
   useCreateIndex: true,
+  useUnifiedTopology: true,
 });
 
 const database = mongoose.connection;
@@ -36,6 +35,7 @@ database.on('disconnected', () => {
     auto_reconnect: true,
     useNewUrlParser: true,
     useCreateIndex: true,
+    useUnifiedTopology: true,
   });
 });
 
