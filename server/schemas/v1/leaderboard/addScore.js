@@ -1,7 +1,8 @@
 const joi = require('joi');
 
 const schema = joi.object().keys({
-  example: joi.string().required(),
+  name: joi.string().required(),
+  score: joi.number().required(),
 });
 
 module.exports = (req, res, next) => {
