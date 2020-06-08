@@ -10,6 +10,11 @@ const controllers = retrieveControllers(
 );
 const schemas = retrieveSchemas(__filename.split(/\\routers|\/routers/)[1].split('.')[0]);
 
+router.get(
+  constants.endpoints.RETRIEVE_LEADERBOARD,
+  controllers.retrieveLeaderboard,
+);
+
 router.post(
   constants.endpoints.ADD_SCORE,
   schemas.addScore,

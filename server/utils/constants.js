@@ -1,5 +1,6 @@
 module.exports = {
   endpoints: {
+    RETRIEVE_LEADERBOARD: '/',
     ADD_SCORE: '/score',
   },
   error: {
@@ -14,5 +15,8 @@ module.exports = {
   },
   tables: {
     SCORES: 'Scores',
+  },
+  values: {
+    MAXIMUM_LEADERBOARD_SCORES: 50,
   }
 };
