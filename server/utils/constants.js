@@ -1,5 +1,6 @@
 module.exports = {
   endpoints: {
+    RETRIEVE_LEADERBOARD: '/',
     ADD_SCORE: '/score',
   },
   error: {
