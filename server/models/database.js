@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const mongoose = require('mongoose');
 const fs = require('fs');
-const logger = require('javascript-custom-logger');
+const logger = require('log-champ');
 
 const DB_HOST = `mongodb://${process.env.DB_USERNAME}:${encodeURIComponent(
   process.env.DB_PASSWORD
