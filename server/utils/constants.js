@@ -15,5 +15,8 @@ module.exports = {
   },
   tables: {
     SCORES: 'Scores',
+  },
+  values: {
+    MAXIMUM_LEADERBOARD_SCORES: 50,
   }
 };
