@@ -1,7 +1,7 @@
 /**
  * @api {POST} /v1/score 
  * @apiName Insert Score
- * @apiGroup Leader Board
+ * @apiGroup Leaderboard
  * @apiVersion 1.0.0
  * 
  * @apiParam {String} name Player's name.
