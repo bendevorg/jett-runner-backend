@@ -32,8 +32,6 @@ module.exports = (req, res, next) => {
   if (tokenAge > constants.values.TOKEN_MAX_AGE_IN_MS) {
     return next(new InvalidAuth());
   }
-  req.user = {
-    anonymousData: tokenData
-  };
+  req.user = tokenData;
   return next();
 };

@@ -27,13 +27,14 @@ const insertDatabase = require('../../../utils/insertDatabase');
 const constants = require('../../../utils/constants');
 
 module.exports = async (req, res, next) => {
-  const { name, score } = req.body;
-  let newScore;
+  const { score } = req.body;
+  const { user } = req;
+  const name = user.id;
 
   try {
-    newScore = await insertDatabase(constants.tables.SCORES, {name, score});
+    await insertDatabase(constants.tables.SCORES, { name, score });
   } catch (err) {
     return next(err);
   }
-  return res.status(200).json({ data: newScore });
+  return res.status(200).json({ message: constants.messages.info.SCORE_ADDED });
 };

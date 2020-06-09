@@ -15,6 +15,9 @@ module.exports = {
       INVALID_AUTH: 'Invalid authentication',
       UNEXPECTED_RUNNING: 'An unexpected error occurred while processing your request.',
     },
+    info: {
+      SCORE_ADDED: 'New score added',
+    },
   },
   tables: {
     SCORES: 'Scores',
