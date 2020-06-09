@@ -7,7 +7,7 @@
  * @apiSuccess (200) {String} data score data.
  * @apiSuccessExample {json} Success-Response:
   {
-    "data": [
+    "leaderboard": [
       {
         "_id": "5eddba336d073d2c98b8b4cf",
         "name": "corona-chan",
@@ -29,9 +29,9 @@ const constants = require('../../../utils/constants');
 module.exports = async (req, res, next) => {
   const filters = {};
   const sort = { score: -1 };
-  let leaderBoard = null;
+  let leaderboard;
   try {
-    leaderBoard = await findDatabase(
+    leaderboard = await findDatabase(
       constants.tables.SCORES,
       filters,
       [],
@@ -43,6 +43,6 @@ module.exports = async (req, res, next) => {
     return next(err);
   };
   return res.status(200).json({
-    data: leaderBoard,
+    leaderboard,
   });
 };

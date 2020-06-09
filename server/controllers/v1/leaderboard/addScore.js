@@ -14,11 +14,7 @@
  * @apiSuccess (200) {String} data Score data.
  * @apiSuccessExample {json} Success-Response:
     {
-    "data": {
-        "_id": "5ed9c4ee5ff52f38b4cd70d3",
-        "name": "pintu",
-        "score": 9,
-        "__v": 0
+      "message": "Score added"
     }
 }
   *
