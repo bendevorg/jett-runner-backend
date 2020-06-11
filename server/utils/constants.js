@@ -1,6 +1,7 @@
 module.exports = {
   endpoints: {
     RETRIEVE_LEADERBOARD: '/',
+    USER_INFO: '/',
     ADD_SCORE: '/score',
   },
   error: {
@@ -28,6 +29,11 @@ module.exports = {
     MAXIMUM_LEADERBOARD_SCORES: 50,
     TIMEZONE_IN_MS: (new Date()).getTimezoneOffset() * 60 * 1000,
     TOKEN_MAX_AGE_IN_MS: 5 * 60 * 1000,
+    SENSITIVE_FIELDS: ['_id']
+  },
+  selects: {
+    USER_DATA: ['_id', 'highscore'],
+    LEADERBOARD_DATA: ['highscore', '-_id'],
   },
   headers: {
     authorization: 'x-authorization-key',

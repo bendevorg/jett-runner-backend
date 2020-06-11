@@ -24,7 +24,7 @@ module.exports = async (req, res, next) => {
   const _id = req.user.id;
   let userData;
   try {
-    userData = await findDatabase(constants.tables.USERS, { _id }, [], 0, 1);
+    userData = await findDatabase(constants.tables.USERS, { _id }, constants.selects.USER_DATA, 0, 1);
   } catch (err) {
     if (err.name !== constants.error.name.DOCUMENT_NOT_FOUND_ERROR) {
       return next(err);

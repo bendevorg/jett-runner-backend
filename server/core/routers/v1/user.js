@@ -12,6 +12,13 @@ const schemas = retrieveSchemas(__filename.split(/\\routers|\/routers/)[1].split
 const tokenValidationMiddleware = require('../../../middlewares/tokenValidationMiddleware');
 const userMiddleware = require('../../../middlewares/userMiddleware');
 
+router.get(
+  constants.endpoints.USER_INFO,
+  tokenValidationMiddleware,
+  userMiddleware,
+  controllers.retrieveUserInfo
+);
+
 router.post(
   constants.endpoints.ADD_SCORE,
   schemas.addScore,
