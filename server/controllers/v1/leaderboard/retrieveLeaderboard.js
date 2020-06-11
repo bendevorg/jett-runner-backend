@@ -28,13 +28,14 @@ const constants = require('../../../utils/constants');
 
 module.exports = async (req, res, next) => {
   const filters = {};
-  const sort = { score: -1 };
+  const sort = { highscore: -1 };
+  const select = ['highscore', '-_id'];
   let leaderboard;
   try {
     leaderboard = await findDatabase(
-      constants.tables.SCORES,
+      constants.tables.USERS,
       filters,
-      [],
+      select,
       0,
       constants.MAXIMUM_LEADERBOARD_SCORES,
       sort,
