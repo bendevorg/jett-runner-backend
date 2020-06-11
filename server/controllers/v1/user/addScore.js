@@ -1,14 +1,12 @@
 /**
- * @api {POST} /v1/score 
+ * @api {POST} /v1/user/score 
  * @apiName Insert Score
- * @apiGroup Leaderboard
+ * @apiGroup User
  * @apiVersion 1.0.0
  * 
- * @apiParam {String} name Player's name.
  * @apiParam {Number} score Player's score.
  * @apiParamExample {json} Request-example:
     {
-      "name": "pintu",
       "score": 9
     }
  * @apiSuccess (200) {String} data Score data.
