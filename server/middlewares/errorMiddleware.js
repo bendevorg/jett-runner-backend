@@ -16,6 +16,10 @@ module.exports = (err, req, res, next) => {
       return res.status(400).json({
         data: err.details[0].message,
       });
+    case (constants.error.name.DOCUMENT_NOT_FOUND_ERROR):
+      return res.status(404).json({
+        data: constants.messages.error.NOT_FOUND,
+      });
     case (constants.error.name.INVALID_AUTH):
       return res.status(401).json({
         data: constants.messages.error.INVALID_AUTH,

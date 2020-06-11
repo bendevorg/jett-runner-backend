@@ -1,12 +1,13 @@
 module.exports = mongoose => {
   return new mongoose.Schema({
-    name: {
+    _id: {
       type: String,
       required: true,
     },
-    score: {
+    highscore: {
       type: Number,
-      required: true,
+      required: false,
+      default: 0,
     },
   });
 };

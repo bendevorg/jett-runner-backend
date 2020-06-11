@@ -8,11 +8,13 @@ module.exports = {
       VALIDATION_ERROR: 'ValidationError',
       NOT_FOUND: 'NotFoundError',
       INVALID_AUTH: 'InvalidAuthError',
+      DOCUMENT_NOT_FOUND_ERROR: 'DocumentNotFoundError',
     },
   },
   messages: {
     error: {
       INVALID_AUTH: 'Invalid authentication',
+      NOT_FOUND: 'Data not found',
       UNEXPECTED_RUNNING: 'An unexpected error occurred while processing your request.',
     },
     info: {
@@ -20,7 +22,7 @@ module.exports = {
     },
   },
   tables: {
-    SCORES: 'Scores',
+    USERS: 'Users',
   },
   values: {
     MAXIMUM_LEADERBOARD_SCORES: 50,

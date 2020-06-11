@@ -10,6 +10,7 @@ const controllers = retrieveControllers(
 );
 const schemas = retrieveSchemas(__filename.split(/\\routers|\/routers/)[1].split('.')[0]);
 const tokenValidationMiddleware = require('../../../middlewares/tokenValidationMiddleware');
+const userMiddleware = require('../../../middlewares/userMiddleware');
 
 router.get(
   constants.endpoints.RETRIEVE_LEADERBOARD,
@@ -20,6 +21,7 @@ router.post(
   constants.endpoints.ADD_SCORE,
   schemas.addScore,
   tokenValidationMiddleware,
+  userMiddleware,
   controllers.addScore
 );
 
